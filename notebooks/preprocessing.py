@@ -8,6 +8,7 @@ from sklearn_pandas import DataFrameMapper
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import FunctionTransformer
+from sklearn.base import BaseEstimator, TransformerMixin
 import numpy as np
 
 
@@ -110,36 +111,74 @@ def remove_outliers(numerical_data: pd.DataFrame, column: str):
     return numerical_data
 
 
-class preprocessing:
-    def __init__(self):
-        pass
-
-    def fit():
-        pass
-
-    def transform():
-        pass
-
-    pass
-
-
-class categorical_tranformer:
+class preprocessing_initial_data:
     def __init__(
         self,
-        remove_outliers=False,
-        inputation_numerical_data=False,
+        remove_outlier=False,
+        columns_with_outliers=[],
+        resample=False,
+        target_column=None,
+    ):
+        self.remove_outlier = remove_outlier
+        self.columns_with_outliers = columns_with_outliers
+        self.resample = resample
+        self.target_column = target_column
+
+    def fit(self, X):
+        pass
+
+    def transform(self, X):
+        if self.resample:
+            X = resample_data_stratified(X, self.target_column)
+        if self.remove_outlier:
+            for columns in self.columns_with_outliers:
+                X = remove_outliers(X, columns)
+        return X
+
+
+class categorical_tranformer(BaseEstimator, TransformerMixin):
+    def __init__(
+        self,
+        inputation_categorical=True,
         inputation_type=0,
-        treat_numerical_data=False,
+        treat_categorica=False,
         treat_type=0,
     ):
-        remove_outliers = remove_outliers
-        inputation_numerical_data = inputation_numerical_data
+        inputation_categorical = inputation_categorical
         inputation_type = inputation_type
-        treat_numerical_data = treat_numerical_data
+        treat_categorica = treat_categorica
         treat_type = treat_type
 
     def fit(self, X):
         return self
 
     def transform(self, X):
-        pass
+        if self.treat_categorical:
+            X = treat_numerical_data(X, self.treat_type)
+        if self.inputation_categorical:
+            X = inputation_numerical_data(X, self.inputation_type)
+        return X
+
+
+class numerical_tranformer(BaseEstimator, TransformerMixin):
+    def __init__(
+        self,
+        inputation_numerical=False,
+        inputation_type=0,
+        treat_numerical=True,
+        treat_type=0,
+    ):
+        self.inputation_numerical = inputation_numerical
+        self.inputation_type = inputation_type
+        self.treat_numerical = treat_numerical
+        self.treat_type = treat_type
+
+    def fit(self, X):
+        return self
+
+    def transform(self, X):
+        if self.treat_numerical:
+            X = treat_numerical_data(X, self.treat_type)
+        if self.inputation_numerical:
+            X = inputation_numerical_data(X, self.inputation_type)
+        return X

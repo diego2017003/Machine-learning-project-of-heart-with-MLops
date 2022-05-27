@@ -1,6 +1,7 @@
 import logging
 from multiprocessing import Value
 import pandas as pd
+from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
@@ -111,7 +112,22 @@ def remove_outliers(numerical_data: pd.DataFrame, column: str):
     return numerical_data
 
 
-class preprocessing_initial_data:
+class Feature_selector(BaseEstimator, TransformerMixin):
+    def __init__(self, data_type="numerical"):
+        self.data_type = data_type
+
+    def fit(self, X):
+        pass
+
+    def transform(self, X):
+        numerical_features, categorical_features = get_numerical_categorical_features(X)
+        if self.data_type == "numerical":
+            return X.loc[:, numerical_features]
+        else:
+            return X.loc[:, categorical_features]
+
+
+class Preprocessing_initial_data(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         remove_outlier=False,
@@ -136,18 +152,18 @@ class preprocessing_initial_data:
         return X
 
 
-class categorical_tranformer(BaseEstimator, TransformerMixin):
+class Categorical_tranformer(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         inputation_categorical=True,
         inputation_type=0,
-        treat_categorica=False,
+        treat_categorical=False,
         treat_type=0,
     ):
-        inputation_categorical = inputation_categorical
-        inputation_type = inputation_type
-        treat_categorica = treat_categorica
-        treat_type = treat_type
+        self.inputation_categorical = inputation_categorical
+        self.inputation_type = inputation_type
+        self.treat_categorical = treat_categorical
+        self.treat_type = treat_type
 
     def fit(self, X):
         return self
@@ -160,7 +176,7 @@ class categorical_tranformer(BaseEstimator, TransformerMixin):
         return X
 
 
-class numerical_tranformer(BaseEstimator, TransformerMixin):
+class Numerical_tranformer(BaseEstimator, TransformerMixin):
     def __init__(
         self,
         inputation_numerical=False,
@@ -182,3 +198,62 @@ class numerical_tranformer(BaseEstimator, TransformerMixin):
         if self.inputation_numerical:
             X = inputation_numerical_data(X, self.inputation_type)
         return X
+
+
+class pipeline_preprocessing(BaseEstimator, TransformerMixin):
+    def __init__(
+        self,
+        inputation_numerical=False,
+        inputation_type=0,
+        treat_numerical=True,
+        treat_type=0,
+        inputation_categorical=True,
+        inputation_cat_type=0,
+        treat_categorical=False,
+        treat_cat_type=0,
+    ):
+        self.inputation_categorical = inputation_categorical
+        self.inputation_type = inputation_type
+        self.treat_categorical = treat_categorical
+        self.treat_type = treat_type
+        self.inputation_numerical = inputation_numerical
+        self.inputation_cat_type = inputation_cat_type
+        self.treat_numerical = treat_numerical
+        self.treat_cat_type = treat_cat_type
+
+    def fit(self, X):
+        return self
+
+    def transform(self, X):
+        transform_numerical = Numerical_tranformer(
+            inputation_numerical=self.inputation_numerical,
+            inputation_type=self.inputation_type,
+            treat_numerical=self.treat_numerical,
+            treat_type=self.treat_type,
+        )
+        transform_categorical = Categorical_tranformer(
+            inputation_categorical=self.inputation_categorical,
+            inputation_type=self.inputation_cat_type,
+            treat_categorical=self.treat_categorical,
+            treat_type=self.treat_cat_type,
+        )
+        numerical_pipeline = Pipeline(
+            steps=[
+                ("select numerical_data", Feature_selector(data_type="numerical")),
+                ("transform numerical data", transform_numerical),
+            ]
+        )
+        categorical_pipeline = Pipeline(
+            steps=[
+                ("select categorical data", Feature_selector(data_type="categorical")),
+                ("transform categorical data", transform_categorical),
+            ]
+        )
+        pipeline_preprocessing = FeatureUnion(
+            transformer_list=[
+                ("categorical_pipeline", categorical_pipeline),
+                ("numerical_pipeline", numerical_pipeline),
+            ]
+        )
+
+        return pipeline_preprocessing

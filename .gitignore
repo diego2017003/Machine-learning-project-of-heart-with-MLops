@@ -1,0 +1,11 @@
+/.env
+/wandb
+decision_tree.png
+/notebooks/_pycache_
+/notebooks/.ipynb_checkpoints
+/notebooks/wandb
+/notebooks/artifacts
+/data/wandb
+/.vscode
+/.venv
+

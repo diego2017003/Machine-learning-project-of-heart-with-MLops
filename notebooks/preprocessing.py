@@ -75,15 +75,17 @@ def resample_data_stratified(data: pd.DataFrame, column: str):
     return resample_data
 
 
-def inputation_categorical_data(inputation_type: int):
+def inputation_categorical_data(data: pd.DataFrame, inputation_type: int):
+    categorical_columns = data.columns.to_list()
     if inputation_type == 0:
         imp = SimpleImputer(strategy="most_frequent")
     elif inputation_type == 1:
         imp = SimpleImputer(strategy="constant", fill_value="Nao se aplica")
-    return imp
+    return_data = pd.DataFrame(imp.fit_transform(data), columns=categorical_columns)
+    return return_data
 
 
-def inputation_numerical_data(inputation_type: int):
+def inputation_numerical_data(data: pd.DataFrame, inputation_type: int):
     if inputation_type == 0:
         imp = SimpleImputer(strategy="mean")
     elif inputation_type == 1:
@@ -93,7 +95,7 @@ def inputation_numerical_data(inputation_type: int):
     if inputation_type == 3:
         imp = SimpleImputer(strategy="constant", fill_value=0)
 
-    return imp
+    return imp.fit_transform(data)
 
 
 def remove_outliers(numerical_data: pd.DataFrame, column: str):
@@ -116,10 +118,10 @@ class Feature_selector(BaseEstimator, TransformerMixin):
     def __init__(self, data_type="numerical"):
         self.data_type = data_type
 
-    def fit(self, X):
-        pass
+    def fit(self, X: pd.DataFrame):
+        return self
 
-    def transform(self, X):
+    def transform(self, X: pd.DataFrame):
         numerical_features, categorical_features = get_numerical_categorical_features(X)
         if self.data_type == "numerical":
             return X.loc[:, numerical_features]
@@ -141,7 +143,7 @@ class Preprocessing_initial_data(BaseEstimator, TransformerMixin):
         self.target_column = target_column
 
     def fit(self, X):
-        pass
+        return self
 
     def transform(self, X):
         if self.resample:
@@ -159,20 +161,27 @@ class Categorical_tranformer(BaseEstimator, TransformerMixin):
         inputation_type=0,
         treat_categorical=False,
         treat_type=0,
+        colnames=[],
     ):
         self.inputation_categorical = inputation_categorical
         self.inputation_type = inputation_type
         self.treat_categorical = treat_categorical
         self.treat_type = treat_type
+        self.colnames = colnames
+
+    def get_feature_names_out(self):
+        return self.colnames
 
     def fit(self, X):
         return self
 
     def transform(self, X):
-        if self.treat_categorical:
-            X = treat_numerical_data(X, self.treat_type)
         if self.inputation_categorical:
-            X = inputation_numerical_data(X, self.inputation_type)
+            X = inputation_categorical_data(X, self.inputation_type)
+        if self.treat_categorical:
+            X = treat_categorical_data(X, self.treat_type)
+
+        self.colnames = X.columns
         return X
 
 
@@ -183,11 +192,16 @@ class Numerical_tranformer(BaseEstimator, TransformerMixin):
         inputation_type=0,
         treat_numerical=True,
         treat_type=0,
+        colnames=[],
     ):
         self.inputation_numerical = inputation_numerical
         self.inputation_type = inputation_type
         self.treat_numerical = treat_numerical
         self.treat_type = treat_type
+        self.colnames = colnames
+
+    def get_feature_names_out(self):
+        return self.colnames
 
     def fit(self, X):
         return self
@@ -195,6 +209,7 @@ class Numerical_tranformer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         if self.treat_numerical:
             X = treat_numerical_data(X, self.treat_type)
+
         if self.inputation_numerical:
             X = inputation_numerical_data(X, self.inputation_type)
         return X
@@ -209,8 +224,8 @@ class pipeline_preprocessing(BaseEstimator, TransformerMixin):
         treat_type=0,
         inputation_categorical=True,
         inputation_cat_type=0,
-        treat_categorical=False,
-        treat_cat_type=0,
+        treat_categorical=True,
+        treat_cat_type=1,
     ):
         self.inputation_categorical = inputation_categorical
         self.inputation_type = inputation_type
@@ -225,17 +240,21 @@ class pipeline_preprocessing(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
+        X = resample_data_stratified(X, "HeartDisease")
+        numerical_features, categorical_features = get_numerical_categorical_features(X)
         transform_numerical = Numerical_tranformer(
             inputation_numerical=self.inputation_numerical,
             inputation_type=self.inputation_type,
             treat_numerical=self.treat_numerical,
             treat_type=self.treat_type,
+            colnames=numerical_features,
         )
         transform_categorical = Categorical_tranformer(
             inputation_categorical=self.inputation_categorical,
             inputation_type=self.inputation_cat_type,
             treat_categorical=self.treat_categorical,
             treat_type=self.treat_cat_type,
+            colnames=categorical_features,
         )
         numerical_pipeline = Pipeline(
             steps=[
@@ -255,5 +274,19 @@ class pipeline_preprocessing(BaseEstimator, TransformerMixin):
                 ("numerical_pipeline", numerical_pipeline),
             ]
         )
+        categorical_cols = list(
+            pipeline_preprocessing.get_params()["categorical_pipeline"][
+                1
+            ].get_feature_names_out()
+        )
 
-        return pipeline_preprocessing
+        numerical_cols = list(
+            pipeline_preprocessing.get_params()["numerical_pipeline"][
+                1
+            ].get_feature_names_out()
+        )
+        colnames = categorical_cols + numerical_cols
+        process_data = pd.DataFrame(
+            pipeline_preprocessing.fit_transform(X), columns=colnames
+        )
+        return process_data

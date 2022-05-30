@@ -1,7 +1,7 @@
 .env
 /wandb
 decision_tree.png
-/notebooks/_pycache_
+/notebooks/__pycache__
 /notebooks/.ipynb_checkpoints
 /notebooks/wandb
 /notebooks/artifacts

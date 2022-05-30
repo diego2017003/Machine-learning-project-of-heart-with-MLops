@@ -1,4 +1,4 @@
-/.env
+.env
 /wandb
 decision_tree.png
 /notebooks/_pycache_
@@ -8,4 +8,4 @@ decision_tree.png
 /data/wandb
 /.vscode
 /.venv
-
+*.png

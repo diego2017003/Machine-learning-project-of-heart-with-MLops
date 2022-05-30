@@ -6,6 +6,8 @@ decision_tree.png
 /notebooks/wandb
 /notebooks/artifacts
 /data/wandb
+/app/wandb
+/api/wandb
 /.vscode
 /.venv
 *.png

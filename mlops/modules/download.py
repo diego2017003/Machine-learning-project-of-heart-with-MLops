@@ -5,7 +5,8 @@ import joblib
 
 
 def download_data(WANDB_API):
-    os.system("wandb login --relogin " + WANDB_API)
+    # os.system(f"wandb login --relogin {WANDB_API}")
+    # wandb.login(WANDB_API)
     run = wandb.init(project="project_heart")
     artifact = run.use_artifact("project_heart/heart_2020_cleaned.csv:latest")
     return pd.read_csv(artifact.file())

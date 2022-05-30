@@ -23,7 +23,7 @@ class Model_pipeline(BaseEstimator, TransformerMixin):
         self.model = model
 
     def fit(self, X, y):
-        model_pipeline = Pipeline(
+        self.model_pipeline = Pipeline(
             steps=[
                 ("preprocess", pipeline_preprocessing()),
                 (

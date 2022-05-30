@@ -1,0 +1,10 @@
+/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/sklearn/preprocessing/_label.py:115: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/mlops/modules/main.py", line 34, in <module>
+    main()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/mlops/modules/main.py", line 20, in main
+    pipeline.fit(X, y)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/mlops/modules/train.py", line 38, in fit
+    self.model_pipeline.fit(X_train, y_train)
+AttributeError: 'Model_pipeline' object has no attribute 'model_pipeline'

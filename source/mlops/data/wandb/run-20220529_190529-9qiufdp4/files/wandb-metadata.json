@@ -1,0 +1,34 @@
+{
+    "os": "Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+    "python": "3.10.2",
+    "heartbeatAt": "2022-05-29T22:05:41.897219",
+    "startedAt": "2022-05-29T22:05:29.412239",
+    "docker": null,
+    "gpu": "NVIDIA GeForce MX450",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "artifact",
+        "put",
+        "--name",
+        "project_heart/heart_2020_cleaned.csv",
+        "--type",
+        "raw_data",
+        "--description",
+        "The raw data from heart dataset",
+        "heart_2020_cleaned.csv"
+    ],
+    "state": "running",
+    "program": "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/bin/wandb",
+    "codePath": ".venv/bin/wandb",
+    "git": {
+        "remote": "https://github.com/diego2017003/machineLearnig_project1.git",
+        "commit": "3344ab0b48c44284fb193c00a9b95ea12f67c391"
+    },
+    "email": "diego.medeiros@geowellex.com",
+    "root": "/mnt/c/Users/diego/Desktop/machineLearnig_project1",
+    "host": "DRMedeiros18",
+    "username": "diego",
+    "executable": "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/bin/python"
+}

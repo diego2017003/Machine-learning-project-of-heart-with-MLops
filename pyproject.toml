@@ -17,6 +17,7 @@ sklearn-pandas = "^2.2.0"
 pydantic = "^1.9.1"
 fastapi = "^0.78.0"
 streamlit-agraph = "^0.0.37"
+uvicorn = "^0.17.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

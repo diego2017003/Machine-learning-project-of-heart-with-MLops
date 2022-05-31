@@ -1,6 +1,6 @@
-from download import *
-from preprocessing import *
-from train import *
+from source.mlops.modules.download import *
+from source.mlops.modules.preprocessing import *
+from source.mlops.modules.train import *
 import wandb
 
 

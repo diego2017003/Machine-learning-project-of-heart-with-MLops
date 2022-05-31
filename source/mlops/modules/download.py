@@ -3,7 +3,7 @@ import wandb
 import pandas as pd
 import os
 import joblib
-from source.mlops.modules.config import WandbSettings
+from config import WandbSettings
 
 
 def download_data():

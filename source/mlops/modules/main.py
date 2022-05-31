@@ -1,11 +1,11 @@
-from source.mlops.modules.download import *
-from source.mlops.modules.preprocessing import *
-from source.mlops.modules.train import *
+from download import *
+from preprocessing import *
+from train import *
 import wandb
 
 
 def main():
-    data = download_data("")
+    data = download_data()
     data_resample = Preprocessing_initial_data(
         target_column="HeartDisease"
     ).fit_transform(data)

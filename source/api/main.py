@@ -3,7 +3,8 @@ from pydantic import BaseModel
 import joblib
 import wandb
 import pandas as pd
-import train, preprocessing
+import source.mlops.modules.train
+import source.mlops.modules.preprocessing
 
 app = FastAPI()
 
@@ -59,12 +60,14 @@ def home():
     return {"Hello": "World"}
 
 
-@app.post("/prediction/")
-def get_potability(data: Heart_metrics):
+@app.post("/prediction")
+def heart_prediciton(data: Heart_metrics):
     artifact = run.use_artifact(
         "diego25rm/project_heart/model_export:v1", type="pipeline_artifact"
     ).file()
     loaded_model = joblib.load(artifact)
+    recieve = dict(data)
     X = pd.DataFrame([data])
+    print(X)
     prediction = loaded_model.predict(X)
-    return {"Prediction": prediction}
+    return {"Prediction": data}

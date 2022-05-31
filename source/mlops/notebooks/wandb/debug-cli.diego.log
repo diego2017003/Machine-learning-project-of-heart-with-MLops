@@ -1,0 +1,104 @@
+2022-05-31 15:24:43 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:26:46 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:28:02 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:28:42 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:30:20 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:32:06 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:32:56 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+
+2022-05-31 15:39:35 ERROR Traceback (most recent call last):
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 95, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/cli/cli.py", line 243, in login
+    wandb.login(relogin=relogin, key=key, anonymous=anon_mode, host=host, force=True)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 76, in login
+    configured = _login(**kwargs)
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 297, in _login
+    wlogin.prompt_api_key()
+  File "/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 227, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb login [your_api_key]
+

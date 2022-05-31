@@ -1,4 +1,4 @@
-from source.mlops.modules.preprocessing import *
+from preprocessing import *
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
@@ -37,6 +37,9 @@ class Model_pipeline(BaseEstimator, TransformerMixin):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
         self.model_pipeline.fit(X_train, y_train)
         return self
+
+    def predict(self, X):
+        return self.model_pipeline.predict(X)
 
     def transform(self, X, y):
         self.model_pipeline.transform(X, y)

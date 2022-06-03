@@ -1,5 +1,0 @@
-     BMI Smoking AlcoholDrinking Stroke  PhysicalHealth  MentalHealth  \
-0  38.87     Yes             Yes     No             6.0           0.0
-  DiffWalking     Sex AgeCategory   Race Diabetic PhysicalActivity GenHealth  \
-0         Yes  Female       75-79  Black       No               No      Fair
-   SleepTime Asthma KidneyDisease SkinCancer

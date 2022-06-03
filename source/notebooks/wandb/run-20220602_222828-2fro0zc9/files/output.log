@@ -1,0 +1,5 @@
+    BMI Smoking AlcoholDrinking Stroke  PhysicalHealth  MentalHealth  \
+0  16.4     Yes              No     No             3.0          30.0
+  DiffWalking   Sex AgeCategory   Race Diabetic PhysicalActivity GenHealth  \
+0          No  Male       35-39  Black      Yes              Yes       Bad
+   SleepTime Asthma KidneyDisease SkinCancer

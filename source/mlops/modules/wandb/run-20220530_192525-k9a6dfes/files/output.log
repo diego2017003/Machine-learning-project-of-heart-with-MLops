@@ -1,2 +1,0 @@
-/mnt/c/Users/diego/Desktop/machineLearnig_project1/.venv/lib/python3.10/site-packages/sklearn/preprocessing/_label.py:115: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
-  y = column_or_1d(y, warn=True)

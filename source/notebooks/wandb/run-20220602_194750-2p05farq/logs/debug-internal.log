@@ -1,0 +1,52 @@
+2022-06-02 19:47:51,746 INFO    MainThread:14250 [internal.py:wandb_internal():90] W&B internal server running at pid: 14250, started at: 2022-06-02 19:47:51.746481
+2022-06-02 19:47:51,749 INFO    WriterThread:14250 [datastore.py:open_for_write():75] open: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/run-2p05farq.wandb
+2022-06-02 19:47:51,751 DEBUG   SenderThread:14250 [sender.py:send():232] send: header
+2022-06-02 19:47:51,751 DEBUG   SenderThread:14250 [sender.py:send():232] send: run
+2022-06-02 19:47:52,159 DEBUG   HandlerThread:14250 [handler.py:handle_request():141] handle_request: check_version
+2022-06-02 19:47:52,166 INFO    SenderThread:14250 [dir_watcher.py:__init__():197] watching files in: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files
+2022-06-02 19:47:52,166 INFO    SenderThread:14250 [sender.py:_start_run_threads():811] run started: 2p05farq with start time 1654210070
+2022-06-02 19:47:52,167 DEBUG   SenderThread:14250 [sender.py:send():232] send: summary
+2022-06-02 19:47:52,167 INFO    SenderThread:14250 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-06-02 19:47:52,167 DEBUG   SenderThread:14250 [sender.py:send_request():246] send_request: check_version
+2022-06-02 19:47:52,474 DEBUG   HandlerThread:14250 [handler.py:handle_request():141] handle_request: run_start
+2022-06-02 19:47:52,997 DEBUG   HandlerThread:14250 [meta.py:__init__():35] meta init
+2022-06-02 19:47:52,997 DEBUG   HandlerThread:14250 [meta.py:__init__():49] meta init done
+2022-06-02 19:47:52,997 DEBUG   HandlerThread:14250 [meta.py:probe():209] probe
+2022-06-02 19:47:53,005 DEBUG   HandlerThread:14250 [meta.py:_setup_git():199] setup git
+2022-06-02 19:47:53,012 DEBUG   HandlerThread:14250 [meta.py:_setup_git():206] setup git done
+2022-06-02 19:47:53,012 DEBUG   HandlerThread:14250 [meta.py:_save_pip():53] save pip
+2022-06-02 19:47:53,013 DEBUG   HandlerThread:14250 [meta.py:_save_pip():67] save pip done
+2022-06-02 19:47:53,013 DEBUG   HandlerThread:14250 [meta.py:probe():247] probe done
+2022-06-02 19:47:53,020 DEBUG   SenderThread:14250 [sender.py:send():232] send: files
+2022-06-02 19:47:53,020 INFO    SenderThread:14250 [sender.py:_save_file():948] saving file wandb-metadata.json with policy now
+2022-06-02 19:47:53,036 DEBUG   HandlerThread:14250 [handler.py:handle_request():141] handle_request: stop_status
+2022-06-02 19:47:53,036 DEBUG   SenderThread:14250 [sender.py:send_request():246] send_request: stop_status
+2022-06-02 19:47:53,168 INFO    Thread-7  :14250 [dir_watcher.py:_on_file_created():244] file/dir created: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/wandb-summary.json
+2022-06-02 19:47:53,169 INFO    Thread-7  :14250 [dir_watcher.py:_on_file_created():244] file/dir created: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/wandb-metadata.json
+2022-06-02 19:47:53,169 INFO    Thread-7  :14250 [dir_watcher.py:_on_file_created():244] file/dir created: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/output.log
+2022-06-02 19:47:53,169 INFO    Thread-7  :14250 [dir_watcher.py:_on_file_created():244] file/dir created: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/requirements.txt
+2022-06-02 19:47:53,409 DEBUG   SenderThread:14250 [sender.py:send():232] send: telemetry
+2022-06-02 19:47:54,040 INFO    Thread-11 :14250 [upload_job.py:push():132] Uploaded file /tmp/tmpzhzebmitwandb/3ppqwbn0-wandb-metadata.json
+2022-06-02 19:47:55,832 DEBUG   HandlerThread:14250 [handler.py:handle_request():141] handle_request: pause
+2022-06-02 19:47:55,832 INFO    HandlerThread:14250 [handler.py:handle_request_pause():695] stopping system metrics thread
+2022-06-02 19:47:56,362 DEBUG   SenderThread:14250 [sender.py:send():232] send: stats
+2022-06-02 19:47:57,169 INFO    Thread-7  :14250 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/output.log
+2022-06-02 19:48:00,759 WARNING MainThread:14250 [internal.py:is_dead():387] Internal process exiting, parent pid 12970 disappeared
+2022-06-02 19:48:00,759 ERROR   MainThread:14250 [internal.py:wandb_internal():149] Internal process shutdown.
+2022-06-02 19:48:01,048 INFO    WriterThread:14250 [datastore.py:close():279] close: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/run-2p05farq.wandb
+2022-06-02 19:48:01,048 INFO    SenderThread:14250 [sender.py:finish():1110] shutting down sender
+2022-06-02 19:48:01,049 INFO    SenderThread:14250 [dir_watcher.py:finish():312] shutting down directory watcher
+2022-06-02 19:48:01,050 INFO    HandlerThread:14250 [handler.py:finish():806] shutting down handler
+2022-06-02 19:48:01,171 INFO    SenderThread:14250 [dir_watcher.py:finish():342] scan: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files
+2022-06-02 19:48:01,171 INFO    SenderThread:14250 [dir_watcher.py:finish():356] scan save: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/output.log output.log
+2022-06-02 19:48:01,172 INFO    SenderThread:14250 [dir_watcher.py:finish():356] scan save: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/config.yaml config.yaml
+2022-06-02 19:48:01,172 INFO    SenderThread:14250 [dir_watcher.py:finish():356] scan save: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/wandb-metadata.json wandb-metadata.json
+2022-06-02 19:48:01,172 INFO    SenderThread:14250 [dir_watcher.py:finish():356] scan save: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/requirements.txt requirements.txt
+2022-06-02 19:48:01,172 INFO    SenderThread:14250 [dir_watcher.py:finish():356] scan save: /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/wandb-summary.json wandb-summary.json
+2022-06-02 19:48:01,175 INFO    SenderThread:14250 [file_pusher.py:finish():145] shutting down file pusher
+2022-06-02 19:48:01,175 INFO    SenderThread:14250 [file_pusher.py:join():150] waiting for file pusher
+2022-06-02 19:48:02,247 INFO    Thread-14 :14250 [upload_job.py:push():132] Uploaded file /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/requirements.txt
+2022-06-02 19:48:02,249 INFO    Thread-12 :14250 [upload_job.py:push():132] Uploaded file /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/output.log
+2022-06-02 19:48:02,251 INFO    Thread-13 :14250 [upload_job.py:push():132] Uploaded file /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/config.yaml
+2022-06-02 19:48:02,501 INFO    Thread-15 :14250 [upload_job.py:push():132] Uploaded file /home/diego/machine learning/machineLearnig_project1/Machine-learning-project-of-heart-with-MLops/source/notebooks/wandb/run-20220602_194750-2p05farq/files/wandb-summary.json
+2022-06-02 19:48:03,437 INFO    MainThread:14250 [internal.py:handle_exit():80] Internal process exited

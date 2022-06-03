@@ -18,3 +18,6 @@
 /source/app/__pycache__
 /source/api/__pycache__
 /source/api/wandb
+*/__pycache__
+*/wandb
+*/artifacts

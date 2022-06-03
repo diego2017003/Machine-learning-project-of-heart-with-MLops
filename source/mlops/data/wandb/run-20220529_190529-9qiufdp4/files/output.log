@@ -1,2 +1,0 @@
-Artifact uploaded, use this artifact in a run by adding:
-    artifact = run.use_artifact("diego25rm/project_heart/heart_2020_cleaned.csv:latest")

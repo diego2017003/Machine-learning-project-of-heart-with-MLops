@@ -2,7 +2,7 @@
 name = "Heart_disease"
 version = "1"
 description = "a machine learning pipeline to study heart disease"
-authors = ["diego medeiros <diego25rn@gamil.com>"]
+authors = ["diego medeiros <diego25rn@gmail.com>"]
 license = "public"
 
 [tool.poetry.dependencies]
@@ -19,6 +19,7 @@ fastapi = "^0.78.0"
 streamlit-agraph = "^0.0.37"
 uvicorn = "^0.17.6"
 ipykernel = "^6.13.0"
+joblib = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

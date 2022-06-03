@@ -3,3 +3,4 @@
   DiffWalking   Sex AgeCategory   Race Diabetic PhysicalActivity GenHealth  \
 0          No  Male       35-39  Black      Yes              Yes       Bad
    SleepTime Asthma KidneyDisease SkinCancer
+0        1.0    Yes           Yes        Yes
